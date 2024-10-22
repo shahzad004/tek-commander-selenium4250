@@ -10,12 +10,18 @@ public class ActivityNoOne{
 
         WebDriver chromedriver=new ChromeDriver();
 
-        chromedriver.get("https://www.retail.tekschool-students.com/");
+        chromedriver.get("https://retail.tekschool-students.com/");
+
+        chromedriver.manage().window().maximize();
+
+        By signIn = By.id("signinLink");
+        WebElement signInButton = chromedriver.findElement(signIn);
+        signInButton.click();
 
        By createAccount= By.id("newAccountBtn");
 
         WebElement createNewAccount= chromedriver.findElement(createAccount);
-
+        createNewAccount.click();
         // to close browser
         chromedriver.quit();
     }
