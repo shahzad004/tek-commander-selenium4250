@@ -16,12 +16,14 @@ public class UsingIdLocators {
         driver.manage().window().maximize();
 
         //step to locate the element
-        By signInLink =By.id("signinLink");
+        By cartButton =By.id("cartBtn");
 
         //step 2 ask selenium to find the element
-        WebElement signInElement = driver.findElement(signInLink);
+        WebElement signInElement = driver.findElement(cartButton);
 
         //step 3 perform the action
         signInElement.click();
+
+        
     }
 }
