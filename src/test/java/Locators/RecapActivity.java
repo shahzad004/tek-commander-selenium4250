@@ -21,7 +21,7 @@ public class RecapActivity {
         Thread.sleep(2500);
         WebElement errorElement =driver.findElement(By.className("error"));
 
-        System.out.println(errorElement);
+        System.out.println(errorElement.getText());
 
         Thread.sleep(2000);
         driver.quit();
