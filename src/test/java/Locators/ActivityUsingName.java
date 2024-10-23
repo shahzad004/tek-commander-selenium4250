@@ -7,12 +7,19 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class ActivityUsingName {
     public static void main(String[] args) throws InterruptedException {
 
+
         ChromeDriver chromedriver=new ChromeDriver();
 
         chromedriver.get("https://www.facebook.com");
         chromedriver.manage().window().maximize();
 Thread.sleep(2000);
-       By emailLocator= By.name("email");
+
+                // Basic steps
+        // finding element name or id
+        // assiging that loaction to webelement
+        //  what ever method you want to apply
+
+        By emailLocator= By.name("email");
         WebElement emailElement=chromedriver.findElement(emailLocator);
         emailElement.sendKeys("khansahib@gamil.com");
 
