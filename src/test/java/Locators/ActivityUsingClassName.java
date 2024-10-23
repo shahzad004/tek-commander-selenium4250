@@ -10,15 +10,16 @@ public class ActivityUsingClassName {
 
         ChromeDriver chromedriver=new ChromeDriver();
 
-        chromedriver.get("/https://retail.tekschool-students.com/");
+        chromedriver.get("https://retail.tekschool-students.com/");
         chromedriver.manage().window().maximize();
 
-        By topNavLocator= By.className("top-nav__logo active");
+        By topNavLocator= By.className("top-nav__logo");
         WebElement topNavElement=chromedriver.findElement(topNavLocator);
 
-        String topNavHeading= topNavElement.getText();
 
-        System.out.println(topNavHeading);
+
+
+        System.out.println(topNavElement.getText());
         Thread.sleep(2500);
 
         chromedriver.quit();

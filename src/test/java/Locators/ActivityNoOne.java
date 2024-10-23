@@ -18,8 +18,8 @@ public class ActivityNoOne{
         WebElement signInButton = chromedriver.findElement(signIn);
         signInButton.click();
 
-       By createAccount= By.id("newAccountBtn");
 
+        By createAccount= By.id("newAccountBtn");
         WebElement createNewAccount= chromedriver.findElement(createAccount);
         createNewAccount.click();
         // to close browser

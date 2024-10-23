@@ -9,13 +9,17 @@ public class ActivityUsingLinkText {
 
         ChromeDriver chromedriver=new ChromeDriver();
 
-        chromedriver.get("/https://www.bbc.com/");
+        chromedriver.get("https://www.bbc.com/");
         chromedriver.manage().window().maximize();
 
         By textLocator= By.linkText("Business");
         WebElement textElement=chromedriver.findElement(textLocator);
+        textElement.click();
 
-        String businessText= textElement.getText();
+        // now after entering into business link we can get its title
+        By titleLocator=By.className("juQBdA");
+        WebElement titleElement= chromedriver.findElement(titleLocator);
+        String businessText= titleElement.getText();
 
         System.out.println(businessText);
 
