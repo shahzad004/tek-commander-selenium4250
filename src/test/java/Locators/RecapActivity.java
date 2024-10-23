@@ -12,8 +12,8 @@ public class RecapActivity {
         driver.manage().window().maximize();
 
         // get click on sign in
-        driver.findElement(By.id("signinLink"));
-
+        driver.findElement(By.id("signinLink")).click();
+        // to get enter data in input fields
         driver.findElement(By.name("email")).sendKeys("wrong12@gmail.com");
         driver.findElement(By.id("password")).sendKeys("324234");
 
