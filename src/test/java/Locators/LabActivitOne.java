@@ -19,7 +19,7 @@ public class LabActivitOne {
 
         WebDriver driver=null;
 
-        int choice=input.nextInt()
+        int choice=input.nextInt();
 ;       if(choice==1) {
             driver= new ChromeDriver();}
          if(choice==2){
