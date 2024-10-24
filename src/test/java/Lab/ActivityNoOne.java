@@ -1,4 +1,4 @@
-package Locators;
+package Lab;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
