@@ -19,12 +19,12 @@ public class LabActivitOne {
 
         WebDriver driver=null;
 
-        int choice=input.nextInt();
+        String choice=input.next();
         System.out.println(choice);
         // to check condition
-;       if(choice==1) {
+;       if(choice.equals("1") || choice.equalsIgnoreCase("Chrome")) {
             driver= new ChromeDriver();}
-         if(choice==2){
+         if(choice.equals("2") || choice.equalsIgnoreCase("Edge")){
         driver=new EdgeDriver();}
 
 

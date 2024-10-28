@@ -14,15 +14,17 @@ public class Week2Activity {
 
 
         driver.findElement(By.xpath("/html/body/div/div/div[1]/div[1]/div[1]/div[2]/div/input")).sendKeys("TV");
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("/html/body/div/div/div[1]/div[1]/div[1]/div[2]/div/button")).click();
 
+        driver.findElement(By.xpath("/html/body/div/div/div[1]/div[1]/div[1]/div[2]/div/button")).click();
+        Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[3]/div/div[1]/img")).click();
-  Thread.sleep(2000);
+        Thread.sleep(1000);
    WebElement textElement= driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[3]/div/div[1]/div[2]/h1"));
 
   String headingtext= textElement.getText();
 
         System.out.println(headingtext);
+
+        driver.quit();
     }
 }
