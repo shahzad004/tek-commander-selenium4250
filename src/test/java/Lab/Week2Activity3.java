@@ -10,18 +10,18 @@ public class Week2Activity3 {
         driver.get("https://retail.tekschool-students.com/");
         driver.manage().window().maximize();
         Thread.sleep(1000);
-        driver.findElement(By.id("//a[@id='signinLink']")).click();
+        driver.findElement(By.xpath("//a[@id='signinLink']")).click();
 
         driver.findElement(By.xpath("//a[text()='Create New Account']")).click();
         Thread.sleep(1000);
 
-        driver.findElement(By.id("//button[@id='signupBtn'']")).click();
+        driver.findElement(By.xpath("//button[@id='signupBtn'']")).click();
 
-   String nametext=     driver.findElement(By.id("//div[@id='nameError']")).getText();
+   String nametext=     driver.findElement(By.xpath("//div[@id='nameError']")).getText();
    Thread.sleep(1000);
-        String emailtext=     driver.findElement(By.id( " //div[@id='emailError']")).getText();
-        String passwordtext=     driver.findElement(By.id( " //div[@id='passwordError']")).getText();
-        String confirmpasstext=     driver.findElement(By.id( " //div[@id='confirmPasswordError']")).getText();
+        String emailtext=     driver.findElement(By.xpath( " //div[@id='emailError']")).getText();
+        String passwordtext=     driver.findElement(By.xpath( " //div[@id='passwordError']")).getText();
+        String confirmpasstext=     driver.findElement(By.xpath( " //div[@id='confirmPasswordError']")).getText();
 
         System.out.println(nametext+" "+ emailtext +" "+ passwordtext +" "+ confirmpasstext);
 
