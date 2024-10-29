@@ -1,7 +1,10 @@
 package Lab;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.List;
 
 public class Week2Activity3 {
     public static void main(String[] args) throws InterruptedException {
@@ -17,16 +20,16 @@ public class Week2Activity3 {
 
         driver.findElement(By.xpath("//button[@id='signupBtn']")).click();
 
-   String nametext=     driver.findElement(By.xpath("//div[@id='nameError']")).getText();
-   Thread.sleep(1000);
-        String emailtext=     driver.findElement(By.xpath( " //div[@id='emailError']")).getText();
+        List<WebElement> errorText=driver.findElements(By.className("Error"));
         Thread.sleep(1000);
-        String passwordtext=     driver.findElement(By.xpath( " //*[@id='passwordError']")).getText();
-        Thread.sleep(1000);
-        String confirmpasstext=     driver.findElement(By.xpath( " //*[@id='confirmPasswordError']")).getText();
-        Thread.sleep(1000);
+        for(WebElement etext: errorText){
+            Thread.sleep(1000);
+            System.out.println(etext);
+        }
 
-        System.out.println(nametext+" "+ emailtext +" "+ passwordtext +" "+ confirmpasstext);
+
+
+
 
         driver.quit();
 
