@@ -9,8 +9,8 @@ public class Week2Activity3 {
         ChromeDriver driver = new ChromeDriver();
         driver.get("https://retail.tekschool-students.com/");
         driver.manage().window().maximize();
-
-        driver.findElement(By.id("//a[@id='signinLink']"));
+        Thread.sleep(1000);
+        driver.findElement(By.id("//a[@id='signinLink']")).click();
 
         driver.findElement(By.xpath("//a[text()='Create New Account']")).click();
         Thread.sleep(1000);
