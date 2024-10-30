@@ -39,8 +39,8 @@ public class Week2SignIn {
 
 
 
-        /* it didnot get span number
-       WebElement cartElement= driver.findElement(By.xpath("////span[@id='cartQuantity']"));
+
+       WebElement cartElement= driver.findElement(By.xpath("//span[@id='cartQuantity']"));
         Thread.sleep(1000);
         String count= cartElement.getText();
 
@@ -50,11 +50,11 @@ public class Week2SignIn {
             System.out.println(count + "added to Cart");
         }
 
-         */
 
+/*
         boolean cartElement= driver.findElement(By.xpath("//span[@id='cartQuantity']")).isDisplayed();
         System.out.println(cartElement);
-
+*/
 
         driver.quit();
 
