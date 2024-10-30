@@ -47,7 +47,7 @@ public class Week2SignIn {
         if(count.equals("0")){
             System.out.println("NO Element is added");
         }else{
-            System.out.println(count + "added to Cart");
+            System.out.println(count + " items added to Cart");
         }
 
 
