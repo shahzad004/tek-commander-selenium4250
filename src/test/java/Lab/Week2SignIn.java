@@ -52,7 +52,7 @@ public class Week2SignIn {
 
          */
 
-        boolean cartElement= driver.findElement(By.xpath("////span[@id='cartQuantity']")).isDisplayed();
+        boolean cartElement= driver.findElement(By.xpath("//span[@id='cartQuantity']")).isDisplayed();
         System.out.println(cartElement);
 
 
