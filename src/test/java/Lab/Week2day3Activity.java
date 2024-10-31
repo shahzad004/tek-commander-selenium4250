@@ -51,7 +51,7 @@ public class Week2day3Activity {
 
         WebElement phoneNoElement=waitTime.until(
                 ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='phoneNumber']")));
-        phoneNoElement.sendKeys("26451156");
+        phoneNoElement.sendKeys("4");
 
         WebElement updateElement= waitTime.until(
                 ExpectedConditions.elementToBeClickable(By.cssSelector("button#personalUpdateBtn")));
@@ -59,7 +59,7 @@ public class Week2day3Activity {
 
 
 
-        String message= driver.findElement(By.xpath("//div[@class='Toastify']/div/div/div/div/text()")).getText();
+        String message= driver.findElement(By.xpath("//div[text()='Personal Information Updated Successfully']")).getText();
         System.out.println(message);
 
 
