@@ -1,9 +1,8 @@
-package Lab;
+package Week2;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -22,9 +21,12 @@ public class Week2day3Activity {
 
         WebDriverWait waitTime=new WebDriverWait(driver,Duration.ofSeconds(20));
 
-        WebElement signInElement= waitTime.until(
-                ExpectedConditions.elementToBeClickable(By.cssSelector("a#signinLink")));
-                signInElement.click();
+                //  WebElement signInElement=
+                waitTime.until(
+                ExpectedConditions.elementToBeClickable((By.cssSelector("a#signinLink")))).click();
+              ///  signInElement.click();
+
+
 
 
         WebElement emailElement=waitTime.until(
@@ -52,7 +54,7 @@ public class Week2day3Activity {
         WebElement phoneNoElement=waitTime.until(
                 ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='phoneNumber']")));
         phoneNoElement.clear();
-        phoneNoElement.sendKeys("2456587458");
+        phoneNoElement.sendKeys("2456587454");
 
         WebElement updateElement= waitTime.until(
                 ExpectedConditions.elementToBeClickable(By.cssSelector("button#personalUpdateBtn")));
@@ -61,9 +63,9 @@ public class Week2day3Activity {
 
         WebElement messageElement=waitTime.until(
                 ExpectedConditions.presenceOfElementLocated(By.xpath("//div[text()='Personal Information Updated Successfully']")));
-         messageElement.getText();
 
-        System.out.println(messageElement);
+        String message= messageElement.getText();
+        System.out.println(message);
 
 
         driver.quit();
