@@ -1,7 +1,13 @@
 package Lab;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class Week2day3Activity {
     public static void main(String[] args) throws InterruptedException {
@@ -10,14 +16,51 @@ public class Week2day3Activity {
         driver.get("https://retail.tekschool-students.com/");
         driver.manage().window().maximize();
 
+        // TO sycncronize so selenium speed with browser speed
+         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-        driver.findElement(By.cssSelector("a#signinLink")).click();
-        driver.findElement(By.cssSelector("input#email")).sendKeys("khan@gmail.com");
-        driver.findElement(By.cssSelector("input#password")).sendKeys("213123");
-        Thread.sleep(1000);
-        driver.findElement(By.cssSelector("button[id='loginBtn']")).click();
-        Thread.sleep(1000);
 
+        WebDriverWait waitTime=new WebDriverWait(driver,Duration.ofSeconds(20));
+
+        WebElement signInElement= waitTime.until(
+                ExpectedConditions.elementToBeClickable(By.cssSelector("a#signinLink")));
+                signInElement.click();
+
+
+        WebElement emailElement=waitTime.until(
+                ExpectedConditions.presenceOfElementLocated(By.cssSelector("input#email")));
+        emailElement.sendKeys("khan1@gmail.com");
+
+
+        WebElement passElement=waitTime.until(
+                ExpectedConditions.presenceOfElementLocated(By.cssSelector("input#password")));
+        passElement.sendKeys("Khan@123");
+
+
+
+        WebElement loginElement= waitTime.until(
+                ExpectedConditions.elementToBeClickable(By.cssSelector("button[id='loginBtn']")));
+        loginElement.click();
+
+
+        WebElement accountElement= waitTime.until(
+                ExpectedConditions.elementToBeClickable(By.cssSelector("a[id='accountLink']")));
+        accountElement.click();
+
+
+
+        WebElement phoneNoElement=waitTime.until(
+                ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='phoneNumber']")));
+        phoneNoElement.sendKeys("26451156");
+
+        WebElement updateElement= waitTime.until(
+                ExpectedConditions.elementToBeClickable(By.cssSelector("button#personalUpdateBtn")));
+        updateElement.click();
+
+
+
+        String message= driver.findElement(By.xpath("//div[@class='Toastify']/div/div/div/div/text()")).getText();
+        System.out.println(message);
 
 
         driver.quit();
