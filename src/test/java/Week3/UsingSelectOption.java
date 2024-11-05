@@ -16,7 +16,7 @@ public class UsingSelectOption {
         driver.manage().window().maximize();
 
 
-       WebElement choice= driver.findElement(By.xpath("//option[@value='Pashto']"));
+       WebElement choice= driver.findElement(By.xpath("//select[@id='languageSelect']"));
 
         Select choices=new Select(choice);
         choices.selectByVisibleText("Pashto");
@@ -29,6 +29,7 @@ public class UsingSelectOption {
         }
 
 
+        driver.quit();
 
 
 

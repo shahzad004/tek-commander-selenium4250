@@ -22,20 +22,20 @@ public class Activity1 {
 
         // to add explicit wait time
 
-        WebDriverWait waitTime=new WebDriverWait(driver,Duration.ofSeconds(15));
+        WebDriverWait waitTime=new WebDriverWait(driver,Duration.ofSeconds(20));
 
         waitTime.until(ExpectedConditions.elementToBeClickable((By.xpath("//a[contains(text(),'Sign in')]")))).click();
 
-        waitTime.until(ExpectedConditions.elementToBeClickable((By.cssSelector("input#email")))).sendKeys("quinn.turner@example.com");
+        waitTime.until(ExpectedConditions.presenceOfElementLocated((By.cssSelector("input#email")))).sendKeys("quinn.turner@example.com");
 
-        waitTime.until(ExpectedConditions.elementToBeClickable((By.cssSelector("input#password")))).sendKeys("password123");
+        waitTime.until(ExpectedConditions.presenceOfElementLocated((By.cssSelector("input#password")))).sendKeys("password123");
 
         waitTime.until(ExpectedConditions.elementToBeClickable(By.xpath(("//button[@type='submit']")))).click();
 
         waitTime.until(ExpectedConditions.elementToBeClickable(By.xpath(("//div[@class='ant-space-item']/button")))).click();
 
 
-        WebElement title =waitTime.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(text(),'Quinn Turner')]")));
+        WebElement title =waitTime.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'Quinn Turner')]")));
         String titleName=title.getText();
 
         if(titleName.equals("Quinn Turner")){
