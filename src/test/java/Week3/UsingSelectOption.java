@@ -1,5 +1,7 @@
 package Week3;
 
+import Week3.WebDriver.WebDriverSetup;
+import Week3.locators.LocateElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,28 +10,32 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class UsingSelectOption {
-    public static void main(String[] args) {
 
-        ChromeDriver driver =new ChromeDriver();
-        driver.get("https://retail.tekschool-students.com/selenium/dropdown");
-        driver.manage().window().maximize();
+public class UsingSelectOption extends WebDriverSetup {
 
 
-       WebElement choice= driver.findElement(By.xpath("//select[@id='languageSelect']"));
+    public static void main(String[] args) throws InterruptedException {
+        var locateElemet=new LocateElements();
 
+         WebDriverSetup();
+
+         navigateToUrl("https://retail.tekschool-students.com/selenium/dropdown");
+
+
+
+        Thread.sleep(1000);
+       WebElement choice = locateElemet.locateByname("language");
+
+
+        Thread.sleep(1000);
         Select choices=new Select(choice);
-        choices.selectByVisibleText("Pashto");
-
-        List<WebElement> options=driver.findElements(By.xpath("//select[@id='languageSelect']"));
-
-        for(WebElement list: options){
-            System.out.println(list.getText());
-
-        }
+        choices.selectByVisibleText("Java");
+        Thread.sleep(1000);
 
 
-        driver.quit();
+
+        closeTab();
+        quitBrower();
 
 
 
