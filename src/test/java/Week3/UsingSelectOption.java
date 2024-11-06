@@ -1,7 +1,7 @@
 package Week3;
 
 import Week3.WebDriver.WebDriverSetup;
-import Week3.locators.LocateElements;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,7 +15,7 @@ public class UsingSelectOption extends WebDriverSetup {
 
 
     public static void main(String[] args) throws InterruptedException {
-        var locateElemet=new LocateElements();
+
 
          WebDriverSetup();
 
@@ -24,7 +24,7 @@ public class UsingSelectOption extends WebDriverSetup {
 
 
         Thread.sleep(1000);
-       WebElement choice = locateElemet.locateByname("language");
+       WebElement choice = driver.findElement(By.xpath("//select[@name='language']"));
 
 
         Thread.sleep(1000);
