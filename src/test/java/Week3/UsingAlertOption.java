@@ -10,8 +10,11 @@ public class UsingAlertOption {
 
     public static void main(String[] args) throws InterruptedException {
 
+
+        String baseUrl="https://retail.tekschool-students.com/selenium/javascript-alerts";
+
         WebDriver driver=new ChromeDriver();
-        driver.get("https://retail.tekschool-students.com/selenium/javascript-alerts");
+        driver.get(baseUrl);
         driver.manage().window().maximize();
 
 Thread.sleep(1500);
@@ -19,11 +22,11 @@ Thread.sleep(1500);
           confirmButton.click();
 
         Alert alertButton= driver.switchTo().alert();
-        Thread.sleep(1500);
+
         System.out.println(alertButton.getText());
-
-        alertButton.accept();
-
+        Thread.sleep(1500);
+        alertButton.dismiss();
+        Thread.sleep(1500);
         driver.close();
         driver.quit();
 

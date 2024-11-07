@@ -2,6 +2,7 @@ package Week3;
 
 import Week3.WebDriver.WebDriverSetup;
 
+import Week3.locators.LocateElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,10 +16,9 @@ public class UsingSelectOption extends WebDriverSetup {
 
 
     public static void main(String[] args) throws InterruptedException {
-
+       var locateByName=new LocateElements();
 
          WebDriverSetup();
-
          navigateToUrl("https://retail.tekschool-students.com/selenium/dropdown");
 
 
