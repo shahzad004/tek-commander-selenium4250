@@ -33,7 +33,6 @@ public class Assignment extends WebDriverSetup {
                               }
 
        driver.switchTo().window(tabs.get(1));
-
        driver.quit();
 
 
