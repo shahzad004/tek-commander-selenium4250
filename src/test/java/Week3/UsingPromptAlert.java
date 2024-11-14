@@ -22,10 +22,11 @@ public class UsingPromptAlert {
        promptButton.click();
 
         Alert alertButton= driver.switchTo().alert();
+        alertButton.sendKeys("khan k");
 
         System.out.println(alertButton.getText());
         Thread.sleep(1500);
-        alertButton.dismiss();
+        alertButton.accept();
         Thread.sleep(1500);
         driver.close();
         driver.quit();

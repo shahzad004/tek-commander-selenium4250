@@ -2,7 +2,6 @@ package Week3;
 
 import Week3.WebDriver.WebDriverSetup;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +11,7 @@ public class Assignment extends WebDriverSetup {
 
         String baseUrl="https://retail.tekschool-students.com/selenium/iframe ";
 
-        WebDriverSetup();
+        webDriverSetup();
         navigateToUrl(baseUrl);
 
         Thread.sleep(1000);

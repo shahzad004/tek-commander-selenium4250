@@ -13,7 +13,7 @@ public class UsingActionClass extends WebDriverSetup {
 
         String baseUrl="https://retail.tekschool-students.com/selenium/drag-drop";
 
-        WebDriverSetup();
+        webDriverSetup();
         navigateToUrl(baseUrl);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 
