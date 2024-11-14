@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Random;
 
 public class Exercisefirst extends WebDriverSetup {
     public static void main(String[] args) throws InterruptedException {
@@ -21,6 +22,8 @@ public class Exercisefirst extends WebDriverSetup {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(10));
         Actions act=new Actions(driver);
+
+      Random autoNumber=new Random();
 
         navigateToUrl(urL);
         wait.until(ExpectedConditions.urlToBe("https://retail.tekschool-students.com/"));
@@ -42,10 +45,11 @@ public class Exercisefirst extends WebDriverSetup {
 
       WebElement enterName= driver.findElement(By.xpath("//input[@id='nameInput']")) ;
        act.click(enterName).perform();
-
+       int no= autoNumber.nextInt(100);
        String userName="Khan";
-       String email="khan3654@gmail.com";
+       String email="khan1"+no+"@gmail.com";
        String password="Hello@12";
+
 
        act.keyDown(Keys.SHIFT).perform();
        for(char ch:userName.toCharArray()){
@@ -57,10 +61,9 @@ public class Exercisefirst extends WebDriverSetup {
 
        Thread.sleep(100);
         // to enter email
-      //  WebElement emailInfo=driver.findElement(By.xpath("//input[@id='emailInput']"));
-      //  act.click(enterName).perform();
-
-       act.keyDown(Keys.TAB).perform();
+        WebElement emailInfo=driver.findElement(By.xpath("//input[@id='emailInput']"));
+        act.click(enterName).perform();
+        act.keyDown(Keys.TAB).perform();
         for(char ch:email.toCharArray()){
             act.sendKeys(String.valueOf(ch)).perform();
             Thread.sleep(100);
@@ -91,17 +94,50 @@ public class Exercisefirst extends WebDriverSetup {
         act.click(signupButton).perform();
 
 
-        WebElement updateName=driver.findElement(By.xpath("//input[@id='nameInput']"));
+
+
+        Thread.sleep(1000);
+
+
+        WebElement updateName=driver.findElement(By.xpath("//input[@name='name']"));
         updateName.clear();
-        act.sendKeys("Khan Sahib");
+        act.click(updateName).perform();
 
-             WebElement month=driver.findElement(By.xpath("//select[@name='expirationMonth']"));
+
+        act.sendKeys("Khan Sahib").perform();
+        Thread.sleep(4000);
+
+
+
+        // To click on update
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='personalUpdateBtn']")));
+        WebElement updateClick=driver.findElement(By.xpath("//button[@id='personalUpdateBtn']"));
+        act.click(updateClick).perform();
+        Thread.sleep(1000);
+
+
+
+        // To choose Date and time Using Select
+        WebElement month=driver.findElement(By.xpath("//select[@name='expirationMonth']"));
             Select select=new Select(month);
-
             select.selectByVisibleText("12");
 
+
         WebElement year=driver.findElement(By.xpath("//select[@name='expirationYear']"));
-        select.deselectByVisibleText("2025");
+        Select option=new Select(year);
+        option.selectByVisibleText("2025");
+        Thread.sleep(5000);
+
+
+
+
+        closeTab();
+        quitBrower();
+
+
+
+
+
 
 
 
