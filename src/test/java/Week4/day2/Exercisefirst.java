@@ -22,8 +22,8 @@ public class Exercisefirst extends WebDriverSetup {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(10));
         Actions act=new Actions(driver);
+        Random autoNumber=new Random();
 
-      Random autoNumber=new Random();
 
         navigateToUrl(urL);
         wait.until(ExpectedConditions.urlToBe("https://retail.tekschool-students.com/"));

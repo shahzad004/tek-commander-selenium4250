@@ -26,7 +26,6 @@ public class OpeningTabs {
         (( JavascriptExecutor ) driver).executeScript("window.open('https://www.google.com/', '_blank')");
 
         Thread.sleep(3000);
-
         (( JavascriptExecutor )driver).executeScript("window.open('https://www.facebook.com', '_blank')");
 
         Thread.sleep(3000);
